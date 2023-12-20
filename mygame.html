@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<div id="con">
+    <h3 id="Hightest">Your Hightest Score:</h3>
+    <h1 class="h1">Guess the number(0-99)</h1>
+    <p>This a game where computer creates a number, you want to guess it right in 10 attempts. Every time you guess it right, the score increases. If your life is over, the game restarts :)</p>
+    <input type="number" id="input" class="input" placeholder="Enter number here" >
+    <button onclick="res()" class="btn">check</button>
+    <button onclick="clr()" class="btn">clear</button>
+    <button onclick="restart()" class="btn">Restart Game</button>
+    <p id="Res" class="result"></p>
+    <p id="scr" class="scr">Your score: 0</p>
+    <p id="Life" class="Life">Lives: 10</p>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,800;1,200;1,400;1,500&display=swap');
+*{
+    font-family: 'Monsterrat', sans-serif;
+}
+body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    margin: 35%;}
+
+#Hightest{
+    margin-left: 80%;
+    bottom: 90%;
+}
+
+.h1{
+    color: black;
+}
+p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px;
+}
+.input{
+    border: none;
+    outline: none;
+    background-color: #e2e2e2;
+    padding: 8px 15px;
+    border-radius: 7px;
+    letter-spacing: 1px;
+}
+.btn{
+    align-items: center;
+    margin: 0.6%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    padding: 10px 9px;
+    cursor: pointer;
+    margin-top: 8px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+</style>
+
+<script>
+    var input=document.getElementById("input")
+    var Res=document.getElementById("Res")
+    var scr=document.getElementById("scr")
+    var Life=document.getElementById("Life")
+    var high=document.getElementById('Hightest')
+    var score=0
+    var c=0
+    var l=10
+    var highestscore=0
+    var scores = []
+    var random=Math.floor(Math.random()*100)
+    console.log(random)
+
+    function res()
+    {
+        var etnum=Number(input.value)
+        if (etnum===random)
+        {       
+                Res.textContent="You WON! | [You found out it in "+((10-l)+1)+" attempt(s)]"
+                score=score+1
+                c=c+1
+                scr.textContent="Your score: "+score
+                input.value=""
+                scores.push(l)
+                scores.sort((a,b)=>b-a)
+                highestscore = scores[0]
+                high.textContent="Your Hightest Score:"+highestscore
+                l=10
+                Life.textContent="Lives: "+l
+                random=Math.floor(Math.random()*100)
+                console.log(random)
+                
+        }
+
+        else if (etnum!=random)
+        {
+        l=l-1
+        c=c+1
+            if (etnum<random)
+            {
+                Res.textContent=etnum+" is lesser"
+                Life.textContent="Lives: "+l
+                if (etnum<=0)
+                {
+                    Res.textContent="Enter valid number"
+                    l=l+1
+                    c=c-1
+                    Life.textContent="Lives: "+l
+                }
+            }
+           if (etnum>random)
+            {
+                Res.textContent=etnum+" is greater"
+                Life.textContent="Lives: "+l
+                if (etnum>99)
+                {
+                    Res.textContent="Enter valid number"
+                    l=l+1
+                    c=c-1
+                    Life.textContent="Lives: "+l
+                }
+            }
+            if (l==0)
+            {
+                Res.textContent="You LOSE :( [The number was "+random+']'
+                random=Math.floor(Math.random()*100)
+                console.log(random)
+                high.textContent="Your Hightest Score:"+highestscore
+                input.value=""
+                l=10
+                c=0
+                score=0
+                Life.textContent="Lives: "+l
+                scr.textContent="Your score: "+score
+            }
+        }
+
+    }
+
+    function restart()
+    {
+        input.value=""
+        l=10
+        score=0
+        Life.textContent="Lives: "+l
+        scr.textContent="Your score: "+score
+        Res.textContent="Game Restart"
+    }
+    function clr()
+    {
+        input.value=""
+    }
+    input.addEventListener("keypress",function(event){
+        if (event.key==="Enter"){
+            res()
+        }
+    })
+</script>
+</body>
+</html>
