@@ -16,7 +16,7 @@ function start(){
     console.log('Started');
 
     update();
-    timer = setInterval(update, 1020);
+    timer = setInterval(update, 1000);
 
     function update(){
     sec=Number(sec)+1;
