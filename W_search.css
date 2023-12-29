@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,500&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;1,400;1,600&family=Oswald:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap');
+
 *{
     background-color: lightblue;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 #input1{
     max-width:  760px;
@@ -20,7 +29,7 @@
     border: none;
     outline: none;
     font-size: 12px;
-    padding: 5px 6px;
+    padding: 5px 14px;
     cursor: pointer;
     margin-top: 8px;
     border-radius: 5px;
@@ -62,4 +71,9 @@ h1{
 }
 #para{
     margin-left: 47%;
+}
+
+#magGlass{
+    font-size: 18px;
+    background-color: lightblue;
 }
