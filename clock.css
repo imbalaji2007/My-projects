@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#div {
+    margin: 25px;
+    text-align: center;
+    color: black;
+    padding: 25px;
+    border-radius: 6px;
+}
+button{
+    padding: 3px 14px;
+    margin-left: 12px;
+    margin-top: 12px;            
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: none;
+}
+#timeDisplay{
+    margin-top: 16.5%;
+}
+.bTn{
+    font-size: 24px;
+}
+#stopWt{
+    font-size: 22px;
+    padding: 12px;
+}
