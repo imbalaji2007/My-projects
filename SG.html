@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="scoreText">Score: 0</h1>
+    <div id="gameBoard">
+        <div id="snakeDiv" class="snakeClass"></div>
+        <div id="food"></div>
+    </div>
+
+    <!-- Uncomment the buttons for direction change if needed -->
+    <!--
+    <button class="btn" onclick="changeDirection('up')">Up</button>
+    <button class="btn" onclick="changeDirection('left')">Left</button>
+    <button class="btn" onclick="changeDirection('right')">Right</button>
+    <button class="btn" onclick="changeDirection('down')">Down</button>
+    -->
+
+    <button onclick="stop()">Stop</button>
+    <script src="script.js"></script>
+</body>
+</html>

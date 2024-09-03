@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#gameBoard{
+    width: 420px;
+    height: 420px;
+    background-color: brown;
+    border: 5px solid black;
+    border-radius: 7px;
+    box-shadow: 0 0 0 10px;
+    margin: auto;
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(21, 20px);
+    grid-template-rows: repeat(21, 20px);
+}
+#snakeDiv{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(10, 255, 10);
+}
+
+#food{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+.btn{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .btn{
+        display: inline;
+    }
+}
