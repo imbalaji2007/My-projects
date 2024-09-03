@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT V.Student</title>
+
+<link rel="stylesheet" href="Chatgpt.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div id="top">
+  <button class="btn" id="newChat" onclick="newChat()"><i class="fa-solid fa-comments"></i></button>
+  <a href="ChatGPT_info.html" id="ChatGPT_info">ChatGPT V.Student</a>
+  <p id="info">Works with ChatGPT API</p>
+  <button class="btn" id="toggleMode" onclick="toggleMode()"><i class="fas fa-moon"></i></button>
+  </div>
+
+  <nav id="nav">
+  <div id="div">
+    <i class="fa-solid fa-star-of-life" id="logo"></i>
+    <h1 id="h1">How can I help you today?</h1>
+  </div>
+  </nav>
+
+  <div id="content">
+  </div>
+
+  <div id="input-con">
+  <input type="text" placeholder="Type here..." id="input">
+  <button class="btn" id="sent" onclick="sent()"> <i class='bx bxs-send'></i> </button>
+  </div>
+
+  <script src="Chatgpt.js">
+  </script>
+  
+</body>
+</html>
