@@ -1,7 +1,7 @@
 body{
     font-family: Arial, sans-serif;
   }
-  h1{
+  #div{
     text-align: center;
     justify-content: center;
     margin-top: 18%;
@@ -30,7 +30,8 @@ body{
     cursor: pointer;
     background-color: gainsboro;
     border-radius: 5px;
-    padding: 8px;
+    padding: 10px;
+    font-size: 20px;
   }
   #sent{
     border: none;
@@ -40,11 +41,13 @@ body{
     border-radius: 5px;
     padding: 9px 10px;
     margin-left: 10px;
+    font-size: 17px;
   }
 
   #info{
+    display: inline;
     padding: 2px;
-    margin-left: 43.5%;
+    margin-left: 30%;
     font-size: 10px;
   }
 
@@ -66,18 +69,95 @@ body{
   margin-left: 30%;
 }
 
-  #ChatGPT_info{
+#ChatGPT_info{
+    padding: 12px;
+    display: inline;
     color: black;
     text-decoration: none;
   }
-  #newdiv{
-    margin-top: 4.5%;
-    margin-bottom: 5%;
-  }
 
-  #top{
+#ChatGPT_info:hover{
+  color: rgb(109, 109, 109);
+}
+
+#newdiv{
+  margin-top: 4.5%;
+  margin-bottom: 6.5%;
+}
+
+#top{
     margin-top: 10px;
     position: fixed;
     top: 0;
     width: 100%;
   }
+#logo{
+  font-size: 40px;
+}
+
+.newChath1{
+  text-align: center;
+    justify-content: center;
+    margin-top: 18%;
+}
+#newLogo{
+  text-align: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+#toggleMode{
+  color: white;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 17px;
+  margin-left: 625px;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+  #ChatGPT_info{
+    color: white;
+  }
+  #ChatGPT_info:hover{
+    color: rgb(128, 114, 114);
+  }
+  #toggleMode{
+    color: black;
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 5px) and (max-width: 670px){
+
+#ChatGPT_info{
+  font-size: 10px;
+}
+#newChat{
+  font-size: 12px;
+}
+
+#info{
+  margin-left: 48px;
+  margin-right: 0;
+}
+#toggleMode{
+  margin-left: 128px;
+}
+
+#div{
+  font-size: 14px;
+  margin-top: 242px;
+}
+
+#input{
+  margin-left: 12px;
+  width: 265px;
+}
+
+
+}

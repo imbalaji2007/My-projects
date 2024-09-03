@@ -1,9 +1,11 @@
 var input = document.getElementById("input");
 var content = document.getElementById('content');
 var div = document.getElementById('div');
+var nav = document.getElementById('nav');
+var top = document.getElementById('top');
 
 async function sent() {
-  div.innerHTML = '';
+  nav.innerHTML = '';
   var newdiv = document.createElement('div');
   newdiv.setAttribute('id', 'newdiv');
   var chat = document.createElement('h2');
@@ -18,8 +20,6 @@ async function sent() {
   var you_inp = document.createElement('h3');
   you_inp.setAttribute('id', 'you_inp');
 
-  chat.textContent = '...';
-  newdiv.appendChild(chat);
 
   chat.textContent = 'ChatGPT:';
   you.textContent = 'You:';
@@ -42,6 +42,32 @@ async function sent() {
     newh3.textContent='This is a test message. Fell free to ask me anything! I will help you!'
   }
 
+  else{
+    const url = 'https://chatgpt146.p.rapidapi.com/q';
+    const apiKey = 'fb8328a7e5mshb35c49e466c4718p174ae0jsn5593cd7a26b0'
+    
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'chatgpt146.p.rapidapi.com'
+        },
+        body: JSON.stringify({
+            prompt: input.value
+        })
+    };
+    
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        newh3.textContent=result
+    } catch (error) {
+        console.error(error);
+    }
+
+  }
+
   newdiv.appendChild(you);
   newdiv.appendChild(you_inp);
   newdiv.appendChild(chat);
@@ -51,9 +77,10 @@ async function sent() {
 }
 
 function newChat() {
-  content.innerHTML = '';
-  div.textContent = '';
-  var h1 = document.createElement('h1');
-  h1.textContent = 'How can I help you today?';
-  div.appendChild(h1);
+  location.reload();
+}
+
+function toggleMode() {
+  var body = document.body;
+  body.classList.toggle("dark-mode");
 }
